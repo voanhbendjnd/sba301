@@ -1,0 +1,6 @@
+node_modules
+dist
+test-results
+docs/template
+docs/evidence
+package-lock.json

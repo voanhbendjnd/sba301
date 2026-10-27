@@ -4,7 +4,7 @@ Nguồn: SBA301 Assignment 01 Student Guide, đặc biệt trang 3–6, 8–13 v
 
 | ID  | Yêu cầu                                  | File/UI chứng minh                                                  | Kiểm thử                       |
 | --- | ---------------------------------------- | ------------------------------------------------------------------- | ------------------------------ |
-| R01 | ReactJS + Vite, project đúng tên         | `Benva-CE190709/package.json`, `vite.config.js`, `main.jsx`      | `npm run dev`, `npm run build` |
+| R01 | ReactJS + Vite, project đúng tên         | `Benva-CE190709/package.json`, `vite.config.js`, `main.jsx`         | `npm run dev`, `npm run build` |
 | R02 | Login page                               | `pages/LoginPage.jsx`                                               | T01/T02                        |
 | R03 | Admin/Admin vào admin                    | `authenticate` trong `dataService.js`, `App.jsx` conditional render | T03/T04                        |
 | R04 | Logo AI + Header                         | `public/assets/funews-logo.png`, `Brand.jsx`, `AdminLayout.jsx`     | T03, ảnh login/dashboard       |

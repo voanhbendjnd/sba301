@@ -1,5 +1,21 @@
-export const defaultSettings = { displayName: 'Administrator', publicationName: 'FU Newsroom' };
+/**
+ * Cài đặt mặc định của hệ thống
+ */
+export const defaultSettings = {
+  displayName: 'Administrator',
+  publicationName: 'FU Newsroom',
+};
 
+/**
+ * Hàm khởi tạo dữ liệu mẫu ban đầu (Seed Data)
+ * Cung cấp dữ liệu ban đầu cho:
+ * - 4 Categories (3 Active, 1 Inactive)
+ * - 3 Users (1 Admin, 1 Staff Active, 1 Staff Inactive)
+ * - 4 News articles liên kết hợp lệ với Category và Author
+ * - Settings mặc định
+ *
+ * @returns {Object} Đối tượng chứa toàn bộ dữ liệu khởi tạo
+ */
 export function createSeed() {
   return {
     categories: [
@@ -7,24 +23,31 @@ export function createSeed() {
         id: 'cat-campus',
         name: 'Campus life',
         description: 'Stories from our university community.',
-        status: 1,
+        status: 1, // 1: Active
       },
       {
         id: 'cat-academic',
         name: 'Academics',
         description: 'Learning, research and academic achievements.',
-        status: 1,
+        status: 1, // 1: Active
       },
-      { id: 'cat-events', name: 'Events', description: 'What is happening on campus.', status: 1 },
+      {
+        id: 'cat-events',
+        name: 'Events',
+        description: 'What is happening on campus.',
+        status: 1, // 1: Active
+      },
       {
         id: 'cat-career',
         name: 'Career',
         description: 'Opportunities for your next chapter.',
-        status: 0,
+        status: 0, // 0: Inactive
       },
     ],
     users: [
+      // Tài khoản Admin cố định phục vụ kiểm thử và demo
       { id: 'user-admin', username: 'Admin', password: 'Admin', role: 1, status: 1 },
+      // Các tài khoản nhân viên (Staff) mẫu
       { id: 'user-linh', username: 'linh.editor', password: 'Demo123', role: 2, status: 1 },
       { id: 'user-minh', username: 'minh.staff', password: 'Demo123', role: 2, status: 0 },
     ],

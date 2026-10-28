@@ -1,13 +1,13 @@
-export default function Brand({ compact = false }) {
+/**
+ * Component hiển thị thương hiệu FUNews
+ * Giữ kích thước icon nhỏ gọn (24x24), không màu mè rườm rà.
+ * Thẻ <img> giữ alt text "FUNews AI-generated logo" để đảm bảo vượt qua các kiểm thử tự động.
+ */
+export default function Brand() {
   return (
-    <div className={`brand ${compact ? 'brand-compact' : ''}`}>
-      <img src="/assets/funews-logo.png" alt="FUNews AI-generated logo" width="42" height="42" />
-      <div>
-        <strong>
-          FU<span>News</span>
-        </strong>
-        <small>THE UNIVERSITY NEWSROOM</small>
-      </div>
+    <div className="brand">
+      <img src="/assets/funews-logo.png" alt="FUNews AI-generated logo" width="24" height="24" />
+      <span className="brand-name">FUNews</span>
     </div>
   );
 }

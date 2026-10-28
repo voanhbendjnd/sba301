@@ -186,7 +186,7 @@ export default function ManagementPage({ entity, data, onSave, onDelete, initial
                   <td>
                     <div className="article-cell">
                       <div>
-                        <strong>{recordName(item)}</strong>
+                        <strong>{recordName(item)}: </strong>
                         {entity === 'news' && (
                           <small className="muted">
                             Author:{' '}

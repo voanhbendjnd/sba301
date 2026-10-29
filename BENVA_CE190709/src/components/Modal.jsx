@@ -1,3 +1,7 @@
+/**
+ * Author: Võ Anh Ben - CE190709
+ */
+
 import { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 

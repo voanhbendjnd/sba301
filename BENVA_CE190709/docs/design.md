@@ -1,5 +1,7 @@
 # Thiết kế và lý do
 
+**Author:** Võ Anh Ben - CE190709
+
 ## Component tree
 
 ```text

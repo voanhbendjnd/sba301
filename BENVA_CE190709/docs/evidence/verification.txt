@@ -1,3 +1,4 @@
+Author: Võ Anh Ben - CE190709
 ﻿Verified 05/10/2026, Asia/Saigon
 Node 22.23.2; npm 10.9.8; Windows
 npm ci: PASS; 26 packages installed, 27 audited, 0 vulnerabilities

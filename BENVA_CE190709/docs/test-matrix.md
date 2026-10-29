@@ -1,5 +1,7 @@
 # Test matrix v? k?t qu? th?c t?
 
+**Author:** Võ Anh Ben - CE190709
+
 L?n ch?y ??y ??: 05/10/2026 10:36 (Asia/Saigon), Chromium full headless / Playwright, 3 workers, Windows + Node 22.23.2. **49/49 PASS, 0 failed/skipped/flaky.** Edge c?ng 49/49 PASS ? l?n ki?m tra tr??c.
 
 Ngu?n actual: `docs/evidence/e2e-results.json` (Chromium), `e2e-edge-results.json` (Edge), assertions trong `tests/e2e/app.spec.js`. T01?T35 t??ng ?ng 35 case PDF trang 12?13. T36?T49 m? r?ng negative/edge. T43/T46 c?n ???c ch?y l?i sau s?a CSS skip-link, 2/2 PASS, v? ?nh ???c ch?p l?i.

@@ -1,9 +1,11 @@
 # SBA301 Assignment 01
 
-Project React/Vite nằm trong **[HoangTLT_CE190272](HoangTLT_CE190272/README.md)**.
+**Author:** Võ Anh Ben - CE190709
+
+Project React/Vite nằm trong **[BENVA_CE190709](BENVA_CE190709/README.md)**.
 
 ```powershell
-cd HoangTLT_CE190272
+cd BENVA_CE190709
 npm install
 npm run dev
 ```

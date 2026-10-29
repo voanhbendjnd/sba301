@@ -1,4 +1,8 @@
 /**
+ * Author: Võ Anh Ben - CE190709
+ */
+
+/**
  * Cài đặt mặc định của hệ thống
  */
 export const defaultSettings = {

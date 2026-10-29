@@ -1,5 +1,6 @@
 # BẢN ĐỒ CHỨC NĂNG VÀ LUỒNG HOẠT ĐỘNG TOÀN BỘ HỆ THỐNG
 
+**Author:** Võ Anh Ben - CE190709  
 **Project:** FUNews Management System (`Benva-CE190709`)  
 **Khóa học:** SBA301 - Assignment 01  
 **Mục đích tài liệu:** Hướng dẫn tra cứu vị trí file, dòng code, tên hàm và luồng dữ liệu (Data/Event Flow) của từng chức năng để phục vụ việc đọc code, thuyết trình và bảo vệ bài thi.
@@ -33,14 +34,14 @@
 ### 1. Khởi tạo & Đồng bộ Dữ liệu (LocalStorage Persistence)
 
 - **Vị trí file & dòng code:**
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L4-L8): Khai báo key `STORAGE_KEY = 'funews.data.v1'`.
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L45-L117): Hàm `isValidData(data)` - Kiểm tra toàn vẹn cấu trúc dữ liệu lưu trữ.
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L126-L144): Hàm `loadData(storage)` - Nạp dữ liệu từ storage hoặc nạp seed mặc định.
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L153-L160): Hàm `saveData(storage, data)` - Ghi dữ liệu JSON vào storage.
-  - [src/data/seed.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/data/seed.js#L18-L102): Hàm `createSeed()` - Tạo dữ liệu mẫu khởi đầu (4 danh mục, 3 user, 4 bài viết).
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L22-L28): Hàm `browserStorage()` - Truy cập `window.localStorage` an toàn với `try-catch`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L52-L53): State `loaded` và `data` khởi tạo dữ liệu ban đầu.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L73-L76): Hook `useEffect` lắng nghe `data` thay đổi để tự động lưu vào storage.
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L8-L12): Khai báo key `STORAGE_KEY = 'funews.data.v1'`.
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L49-L121): Hàm `isValidData(data)` - Kiểm tra toàn vẹn cấu trúc dữ liệu lưu trữ.
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L130-L148): Hàm `loadData(storage)` - Nạp dữ liệu từ storage hoặc nạp seed mặc định.
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L157-L164): Hàm `saveData(storage, data)` - Ghi dữ liệu JSON vào storage.
+  - [src/data/seed.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/data/seed.js#L22-L106): Hàm `createSeed()` - Tạo dữ liệu mẫu khởi đầu (4 danh mục, 3 user, 4 bài viết).
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L26-L32): Hàm `browserStorage()` - Truy cập `window.localStorage` an toàn với `try-catch`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L56-L57): State `loaded` và `data` khởi tạo dữ liệu ban đầu.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L77-L80): Hook `useEffect` lắng nghe `data` thay đổi để tự động lưu vào storage.
 
 - **Các hàm liên quan:** `browserStorage()`, `loadData()`, `isValidData()`, `createSeed()`, `saveData()`.
 
@@ -57,11 +58,11 @@
 ### 2. Đăng nhập (Authentication - Login)
 
 - **Vị trí file & dòng code:**
-  - [src/pages/LoginPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/LoginPage.jsx#L10-L119): Toàn bộ component `LoginPage`.
-  - [src/pages/LoginPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/LoginPage.jsx#L13-L20): Các state `username`, `password`, `error`, `visible` (ẩn/hiện pass).
-  - [src/pages/LoginPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/LoginPage.jsx#L29-L47): Hàm `submit(event)` - Xử lý khi nhấn nút Đăng nhập.
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L362-L366): Hàm `authenticate(username, password)` - Kiểm tra thông tin tài khoản Admin/Admin.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L93-L101): Hàm `login(currentUser)` - Cập nhật user state và lưu sessionStorage.
+  - [src/pages/LoginPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/LoginPage.jsx#L14-L123): Toàn bộ component `LoginPage`.
+  - [src/pages/LoginPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/LoginPage.jsx#L17-L24): Các state `username`, `password`, `error`, `visible` (ẩn/hiện pass).
+  - [src/pages/LoginPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/LoginPage.jsx#L33-L51): Hàm `submit(event)` - Xử lý khi nhấn nút Đăng nhập.
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L366-L370): Hàm `authenticate(username, password)` - Kiểm tra thông tin tài khoản Admin/Admin.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L97-L105): Hàm `login(currentUser)` - Cập nhật user state và lưu sessionStorage.
 
 - **Các hàm liên quan:** `submit()` (trong LoginPage), `authenticate()` (trong dataService), `login()` (trong App).
 
@@ -87,9 +88,9 @@
 ### 3. Duy trì phiên đăng nhập khi F5 / Reload (Session Persistence)
 
 - **Vị trí file & dòng code:**
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L7): Khai báo key `SESSION_KEY = 'funews.session.v1'`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L36-L44): Hàm `readSession()`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L56): State `const [user, setUser] = useState(readSession)`.
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L11): Khai báo key `SESSION_KEY = 'funews.session.v1'`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L40-L48): Hàm `readSession()`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L60): State `const [user, setUser] = useState(readSession)`.
 
 - **Các hàm liên quan:** `readSession()`.
 
@@ -105,8 +106,8 @@
 ### 4. Đăng xuất (Logout)
 
 - **Vị trí file & dòng code:**
-  - [src/components/AdminLayout.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/AdminLayout.jsx#L116-L119): Nút bấm Sign out trong `Sidebar`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L107-L117): Hàm `logout()`.
+  - [src/components/AdminLayout.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/AdminLayout.jsx#L120-L123): Nút bấm Sign out trong `Sidebar`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L111-L121): Hàm `logout()`.
 
 - **Các hàm liên quan:** `logout()`.
 
@@ -125,13 +126,13 @@
 ### 5. Điều hướng trang (Navigation - SPA) & Master Layout
 
 - **Vị trí file & dòng code:**
-  - [src/components/AdminLayout.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/AdminLayout.jsx#L19-L25): Mảng cấu hình menu `menuItems` (Dashboard, Category, News, Users, Settings).
-  - [src/components/AdminLayout.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/AdminLayout.jsx#L35-L62): Component `Header` (hiển thị Breadcrumb và thông tin admin).
-  - [src/components/AdminLayout.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/AdminLayout.jsx#L75-L124): Component `Sidebar` (menu các trang và nút đăng xuất).
-  - [src/components/AdminLayout.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/AdminLayout.jsx#L136-L165): Component `AdminLayout` (kết hợp Sidebar + Header + Content).
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L59): State `const [page, setPage] = useState('dashboard')`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L124-L127): Hàm `navigate(nextPage)`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L206-L244): Khối render có điều kiện (`page === 'dashboard'`, `categories`, `news`, `users`, `settings`).
+  - [src/components/AdminLayout.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/AdminLayout.jsx#L23-L29): Mảng cấu hình menu `menuItems` (Dashboard, Category, News, Users, Settings).
+  - [src/components/AdminLayout.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/AdminLayout.jsx#L39-L66): Component `Header` (hiển thị Breadcrumb và thông tin admin).
+  - [src/components/AdminLayout.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/AdminLayout.jsx#L79-L128): Component `Sidebar` (menu các trang và nút đăng xuất).
+  - [src/components/AdminLayout.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/AdminLayout.jsx#L140-L169): Component `AdminLayout` (kết hợp Sidebar + Header + Content).
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L63): State `const [page, setPage] = useState('dashboard')`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L128-L131): Hàm `navigate(nextPage)`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L210-L248): Khối render có điều kiện (`page === 'dashboard'`, `categories`, `news`, `users`, `settings`).
 
 - **Các hàm liên quan:** `navigate()` (App), `Header()`, `Sidebar()`, `AdminLayout()`.
 
@@ -147,11 +148,11 @@
 ### 6. Thống kê tổng quan trên Dashboard
 
 - **Vị trí file & dòng code:**
-  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L10-L16): Hàm `formatDate(value)` - Format ngày dạng `27 Oct 2026`.
-  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L27-L60): Component `DashboardPage` tính toán các biến `recent`, `active`, `stats`.
-  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L76-L80): Vùng `.welcome-banner` hiển thị `data.settings.publicationName`.
-  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L83-L95): Render lưới 3 thẻ thống kê (`stats-grid`).
-  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L120-L150): Render bảng 5 bài viết mới nhất.
+  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L14-L20): Hàm `formatDate(value)` - Format ngày dạng `27 Oct 2026`.
+  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L31-L64): Component `DashboardPage` tính toán các biến `recent`, `active`, `stats`.
+  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L80-L84): Vùng `.welcome-banner` hiển thị `data.settings.publicationName`.
+  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L87-L99): Render lưới 3 thẻ thống kê (`stats-grid`).
+  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L124-L154): Render bảng 5 bài viết mới nhất.
 
 - **Các hàm liên quan:** `DashboardPage()`, `formatDate()`.
 
@@ -167,10 +168,10 @@
 ### 7. Tạo bài viết nhanh từ Dashboard
 
 - **Vị trí file & dòng code:**
-  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L69-L72): Nút "Create article" trên Dashboard.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L62): State `const [createNews, setCreateNews] = useState(false)`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L210-L213): Callback `onCreateNews={() => { setCreateNews(true); setPage('news'); }}`.
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L43-L54): Khởi tạo state `dialog` dựa trên prop `initialCreate`.
+  - [src/pages/DashboardPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/DashboardPage.jsx#L73-L76): Nút "Create article" trên Dashboard.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L66): State `const [createNews, setCreateNews] = useState(false)`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L214-L217): Callback `onCreateNews={() => { setCreateNews(true); setPage('news'); }}`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L47-L58): Khởi tạo state `dialog` dựa trên prop `initialCreate`.
 
 - **Các hàm liên quan:** `onCreateNews()` (DashboardPage), `setCreateNews()`, `ManagementPage()`.
 
@@ -186,9 +187,9 @@
 ### 8. Xem danh sách bản ghi (Read / Display List)
 
 - **Vị trí file & dòng code:**
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L160-L264): Vùng hiển thị thẻ `<table>`.
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L79): Hàm `recordName(item)` - Lấy tên hiển thị theo thực thể.
-  - [src/components/StatusBadge.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/StatusBadge.jsx#L8-L16): Component hiển thị badge `Active` hoặc `Inactive`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L164-L268): Vùng hiển thị thẻ `<table>`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L83): Hàm `recordName(item)` - Lấy tên hiển thị theo thực thể.
+  - [src/components/StatusBadge.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/StatusBadge.jsx#L12-L20): Component hiển thị badge `Active` hoặc `Inactive`.
 
 - **Các hàm liên quan:** `ManagementPage()`, `recordName()`, `StatusBadge()`.
 
@@ -207,11 +208,11 @@
 ### 9. Tìm kiếm và Lọc dữ liệu (Search & Multi-Filter)
 
 - **Vị trí file & dòng code:**
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L45-L51): Các state `keyword`, `status`, `category`.
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L84-L88): Hàm `clearFilters()`.
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L106-L156): Khung công cụ `management-toolbar` (ô input tìm kiếm + 2 thẻ select lọc).
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L16-L19): Hàm `normalize(value)` - Chuẩn hóa chuỗi (trim + toLowerCase).
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L333-L352): Hàm `searchRecords(list, entity, keyword, status, categoryId)`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L49-L55): Các state `keyword`, `status`, `category`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L88-L92): Hàm `clearFilters()`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L110-L160): Khung công cụ `management-toolbar` (ô input tìm kiếm + 2 thẻ select lọc).
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L20-L23): Hàm `normalize(value)` - Chuẩn hóa chuỗi (trim + toLowerCase).
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L337-L356): Hàm `searchRecords(list, entity, keyword, status, categoryId)`.
 
 - **Các hàm liên quan:** `searchRecords()`, `normalize()`, `clearFilters()`.
 
@@ -232,11 +233,11 @@
 ### 10. Mở Popup biểu mẫu Tạo mới / Chỉnh sửa (Modal Form)
 
 - **Vị trí file & dòng code:**
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L54): State `const [dialog, setDialog] = useState(...)`.
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L98-L101): Nút "Create" kích hoạt `setDialog({ selected: null })`.
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L240-L247): Nút "Edit" kích hoạt `setDialog({ selected: item })`.
-  - [src/components/Modal.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/Modal.jsx#L15-L42): Component `Modal` sử dụng thẻ `<dialog>` HTML5.
-  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L30-L38): Khởi tạo state `form` từ `selected` hoặc `defaults`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L58): State `const [dialog, setDialog] = useState(...)`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L102-L105): Nút "Create" kích hoạt `setDialog({ selected: null })`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L244-L251): Nút "Edit" kích hoạt `setDialog({ selected: item })`.
+  - [src/components/Modal.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/Modal.jsx#L19-L46): Component `Modal` sử dụng thẻ `<dialog>` HTML5.
+  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L34-L42): Khởi tạo state `form` từ `selected` hoặc `defaults`.
 
 - **Các hàm liên quan:** `setDialog()`, `RecordForm()`, `Modal()`.
 
@@ -254,10 +255,10 @@
 ### 11. Kiểm tra hợp lệ dữ liệu nhập (Form Validation)
 
 - **Vị trí file & dòng code:**
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L171-L221): Hàm `validateRecord(entity, form, data, editingId)`.
-  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L40): State `const [errors, setErrors] = useState({})`.
-  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L108-L117): Hàm `submit(event)` trong RecordForm.
-  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L59-L100): Helper `field(...)` hiển thị thẻ `<small className="field-error">`.
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L175-L225): Hàm `validateRecord(entity, form, data, editingId)`.
+  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L44): State `const [errors, setErrors] = useState({})`.
+  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L112-L121): Hàm `submit(event)` trong RecordForm.
+  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L63-L104): Helper `field(...)` hiển thị thẻ `<small className="field-error">`.
 
 - **Các hàm liên quan:** `validateRecord()`, `submit()`, `hasText()`, `normalize()`.
 
@@ -277,8 +278,8 @@
 ### 12. Khôi phục dữ liệu ban đầu trên Form (Reset Form)
 
 - **Vị trí file & dòng code:**
-  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L31-L34): Biến hằng `initial`.
-  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L225-L235): Nút bấm **Reset** trong `RecordForm`.
+  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L35-L38): Biến hằng `initial`.
+  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L229-L239): Nút bấm **Reset** trong `RecordForm`.
 
 - **Các hàm liên quan:** Sự kiện `onClick` của nút Reset.
 
@@ -294,10 +295,10 @@
 ### 13. Tạo mới bản ghi (Create Record - Bất biến / Immutable)
 
 - **Vị trí file & dòng code:**
-  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L115): Gọi `onSave(form, selected?.id)`.
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L301-L305): Chuyển tiếp `onSave(entity, form, id)` và đóng popup nếu thành công.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L137-L145): Hàm `save(entity, form, id)`.
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L233-L282): Hàm `saveRecord(data, entity, form, editingId = null)`.
+  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L119): Gọi `onSave(form, selected?.id)`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L305-L309): Chuyển tiếp `onSave(entity, form, id)` và đóng popup nếu thành công.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L141-L149): Hàm `save(entity, form, id)`.
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L237-L286): Hàm `saveRecord(data, entity, form, editingId = null)`.
 
 - **Các hàm liên quan:** `submit()`, `save()`, `saveRecord()`.
 
@@ -319,9 +320,9 @@
 ### 14. Chỉnh sửa bản ghi (Update Record - Bất biến / Immutable)
 
 - **Vị trí file & dòng code:**
-  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L115): Gọi `onSave(form, selected?.id)`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L137-L145): Hàm `save(entity, form, id)`.
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L233-L282): Hàm `saveRecord(data, entity, form, editingId)`.
+  - [src/components/RecordForm.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/components/RecordForm.jsx#L119): Gọi `onSave(form, selected?.id)`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L141-L149): Hàm `save(entity, form, id)`.
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L237-L286): Hàm `saveRecord(data, entity, form, editingId)`.
 
 - **Các hàm liên quan:** `submit()`, `save()`, `saveRecord()`.
 
@@ -341,13 +342,13 @@
 ### 15. Kiểm tra ràng buộc khóa ngoại & Xóa an toàn (Delete & Protection)
 
 - **Vị trí file & dòng code:**
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L57): State `const [deleting, setDeleting] = useState(null)`.
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L72): Biến `const reason = deleting ? deletionReason(data, entity, deleting.id) : ''`.
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L253-L256): Bấm nút Trash2 gọi `setDeleting(item)`.
-  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L310-L344): Modal xác nhận xóa an toàn.
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L292-L306): Hàm `deletionReason(data, entity, id)`.
-  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L316-L321): Hàm `deleteRecord(data, entity, id)`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L154-L161): Hàm `remove(entity, id)`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L61): State `const [deleting, setDeleting] = useState(null)`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L76): Biến `const reason = deleting ? deletionReason(data, entity, deleting.id) : ''`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L257-L260): Bấm nút Trash2 gọi `setDeleting(item)`.
+  - [src/pages/ManagementPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/ManagementPage.jsx#L314-L348): Modal xác nhận xóa an toàn.
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L296-L310): Hàm `deletionReason(data, entity, id)`.
+  - [src/services/dataService.js](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/services/dataService.js#L320-L325): Hàm `deleteRecord(data, entity, id)`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L158-L165): Hàm `remove(entity, id)`.
 
 - **Các hàm liên quan:** `setDeleting()`, `deletionReason()`, `deleteRecord()`, `remove()`.
 
@@ -371,10 +372,10 @@
 ### 16. Cài đặt cấu hình tòa soạn & Tên hiển thị (Settings)
 
 - **Vị trí file & dòng code:**
-  - [src/pages/SettingsPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/SettingsPage.jsx#L12-L115): Toàn bộ component `SettingsPage`.
-  - [src/pages/SettingsPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/SettingsPage.jsx#L14): State `const [form, setForm] = useState({ ...settings })`.
-  - [src/pages/SettingsPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/SettingsPage.jsx#L24-L35): Hàm `submit(event)`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L236-L242): Nhận cài đặt mới và cập nhật `setData({ ...data, settings })`.
+  - [src/pages/SettingsPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/SettingsPage.jsx#L16-L119): Toàn bộ component `SettingsPage`.
+  - [src/pages/SettingsPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/SettingsPage.jsx#L18): State `const [form, setForm] = useState({ ...settings })`.
+  - [src/pages/SettingsPage.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/pages/SettingsPage.jsx#L28-L39): Hàm `submit(event)`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L240-L246): Nhận cài đặt mới và cập nhật `setData({ ...data, settings })`.
 
 - **Các hàm liên quan:** `submit()` (SettingsPage), `onSave()` (App).
 
@@ -393,11 +394,11 @@
 ### 17. Hệ thống thông báo Toast & Cảnh báo lỗi lưu trữ
 
 - **Vị trí file & dòng code:**
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L65): State `const [warning, setWarning] = useState(loaded.warning)`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L68): State `const [notice, setNotice] = useState('')`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L79-L85): Hook `useEffect` hẹn giờ tự tắt Toast sau 4.5 giây.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L192-L203): Render thanh thông báo cảnh báo `.storage-warning`.
-  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L247-L257): Render hộp thông báo Toast `.toast-message`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L69): State `const [warning, setWarning] = useState(loaded.warning)`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L72): State `const [notice, setNotice] = useState('')`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L83-L89): Hook `useEffect` hẹn giờ tự tắt Toast sau 4.5 giây.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L196-L207): Render thanh thông báo cảnh báo `.storage-warning`.
+  - [src/App.jsx](file:///c:/Users/PC/Documents/Semester7/sba301/SBA301_Ass1/BENVA_CE190709/src/App.jsx#L251-L261): Render hộp thông báo Toast `.toast-message`.
 
 - **Các hàm liên quan:** `setNotice()`, `setWarning()`, `setTimeout()`.
 

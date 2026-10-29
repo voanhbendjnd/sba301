@@ -1,5 +1,7 @@
 # Hướng dẫn đọc code và luyện bảo vệ
 
+**Author:** Võ Anh Ben - CE190709
+
 Tài liệu là bản đồ đọc code, không phải xác nhận sinh viên đã hiểu. Hãy tự chạy, mở đúng file và giải thích bằng dữ liệu thực tế.
 
 ## Mở file trong 30 giây

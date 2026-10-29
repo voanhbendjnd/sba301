@@ -1,3 +1,7 @@
+/**
+ * Author: Võ Anh Ben - CE190709
+ */
+
 import { useState } from 'react';
 import { Plus, Search, Pencil, Trash2, X, AlertTriangle } from 'lucide-react';
 import RecordForm from '../components/RecordForm.jsx';

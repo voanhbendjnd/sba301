@@ -1,4 +1,8 @@
 /**
+ * Author: Võ Anh Ben - CE190709
+ */
+
+/**
  * Component hiển thị thương hiệu FUNews
  * Giữ kích thước icon nhỏ gọn (24x24), không màu mè rườm rà.
  * Thẻ <img> giữ alt text "FUNews AI-generated logo" để đảm bảo vượt qua các kiểm thử tự động.

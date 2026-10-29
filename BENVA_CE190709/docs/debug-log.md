@@ -1,5 +1,7 @@
 # Debug log — lỗi quan sát thực tế
 
+**Author:** Võ Anh Ben - CE190709
+
 Ghi đúng lỗi đã gặp; không dùng bug giả để làm evidence. Các lỗi hiện tại chủ yếu thuộc setup và test expectation. Không khẳng định đây là ba lỗi logic ứng dụng do sinh viên tự debug.
 
 ## D01 — npm install chạy ở thư mục cha

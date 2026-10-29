@@ -1,3 +1,7 @@
+/**
+ * Author: Võ Anh Ben - CE190709
+ */
+
 import { useState } from 'react';
 import { Eye, EyeOff, LogIn } from 'lucide-react';
 import { authenticate } from '../services/dataService.js';

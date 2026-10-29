@@ -1,3 +1,7 @@
+/**
+ * Author: Võ Anh Ben - CE190709
+ */
+
 import { createSeed } from '../data/seed.js';
 
 // Khóa lưu trữ dữ liệu chính trong LocalStorage

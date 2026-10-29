@@ -1,3 +1,7 @@
+/**
+ * Author: Võ Anh Ben - CE190709
+ */
+
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({

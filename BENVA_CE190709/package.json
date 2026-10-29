@@ -2,6 +2,7 @@
   "name": "benva-ce190709",
   "version": "1.0.0",
   "private": true,
+  "author": "Võ Anh Ben - CE190709",
   "type": "module",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"

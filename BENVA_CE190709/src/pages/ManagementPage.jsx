@@ -1,3 +1,7 @@
+/**
+ * Author: Võ Anh Ben - CE190709
+ */
+
 import { useState } from 'react';
 import { Plus, Search, Pencil, Trash2, X, AlertTriangle } from 'lucide-react';
 import RecordForm from '../components/RecordForm.jsx';
@@ -186,7 +190,7 @@ export default function ManagementPage({ entity, data, onSave, onDelete, initial
                   <td>
                     <div className="article-cell">
                       <div>
-                        <strong>{recordName(item)}</strong>
+                        <strong>{recordName(item)}: </strong>
                         {entity === 'news' && (
                           <small className="muted">
                             Author:{' '}

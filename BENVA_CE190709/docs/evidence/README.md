@@ -1,5 +1,7 @@
 # Evidence index
 
+**Author:** Võ Anh Ben - CE190709
+
 Ngày kiểm chứng: 05/10/2026, Asia/Saigon.
 
 - `e2e-results.json`: lần chạy đầy đủ Chromium, 49 pass, 0 fail/skipped/flaky.

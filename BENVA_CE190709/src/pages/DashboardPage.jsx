@@ -1,3 +1,7 @@
+/**
+ * Author: Võ Anh Ben - CE190709
+ */
+
 import { Newspaper, Folder, Users, Plus, ArrowRight } from 'lucide-react';
 import StatusBadge from '../components/StatusBadge.jsx';
 

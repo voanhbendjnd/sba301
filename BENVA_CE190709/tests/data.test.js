@@ -1,3 +1,7 @@
+/**
+ * Author: Võ Anh Ben - CE190709
+ */
+
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createSeed } from '../src/data/seed.js';

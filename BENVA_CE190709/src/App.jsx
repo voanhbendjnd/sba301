@@ -1,3 +1,7 @@
+/**
+ * Author: Võ Anh Ben - CE190709
+ */
+
 import { useEffect, useState } from 'react';
 import { CheckCircle2, X } from 'lucide-react';
 import LoginPage from './pages/LoginPage.jsx';

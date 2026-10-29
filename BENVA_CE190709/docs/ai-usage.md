@@ -1,5 +1,7 @@
 # AI usage log
 
+**Author:** Võ Anh Ben - CE190709
+
 Ngày thực hiện: 05/10/2026 (Asia/Saigon). Người dùng cung cấp tên project `Benva-CE190709`.
 
 **Phạm vi thực tế:** AI đọc PDF, phân tích, thiết kế, hỗ trợ viết source React, tests, CSS, tài liệu, chạy kiểm thử và tạo logo. Không khẳng định source do sinh viên tự viết, không tạo lịch sử Git giả, không tự xác nhận năng lực của sinh viên.

@@ -1,3 +1,7 @@
+/**
+ * Author: Võ Anh Ben - CE190709
+ */
+
 import { useState } from 'react';
 import Modal from './Modal.jsx';
 import { validateRecord } from '../services/dataService.js';

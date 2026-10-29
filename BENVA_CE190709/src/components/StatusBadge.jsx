@@ -1,4 +1,8 @@
 /**
+ * Author: Võ Anh Ben - CE190709
+ */
+
+/**
  * Component hiển thị huy hiệu trạng thái (StatusBadge)
  * - status = 1: Active (Hoạt động - màu xanh lá nhẹ)
  * - status = 0: Inactive (Không hoạt động - màu xám)

@@ -1,5 +1,7 @@
 # Requirement Traceability Matrix
 
+**Author:** Võ Anh Ben - CE190709
+
 Nguồn: SBA301 Assignment 01 Student Guide, đặc biệt trang 3–6, 8–13 và 18. Phạm vi: frontend quản trị React/Vite; không cần Spring Boot hoặc DB.
 
 | ID  | Yêu cầu                                  | File/UI chứng minh                                                  | Kiểm thử                       |
